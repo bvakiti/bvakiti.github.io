@@ -10,9 +10,10 @@ myApp.directive('customList', ['FlightDetailsService', function (FlightDetailsSe
                     '</ul>',
        'link': {
            'pre': function($s, $el, attrs) {
-               $s.flightData = [];
-               $s.$evalAsync(function () {
-                   $s.flightData = FlightDetailsService.getData();
+               FlightDetailsService.getData().then(function (data) {
+                   $s.$evalAsync(function () {
+                        $s.flightData = data;
+                   });
                });
 
            },
