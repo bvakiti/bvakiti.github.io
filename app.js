@@ -1,6 +1,6 @@
 var myApp = angular.module('myApp', ['ngRoute']);
 
-myApp.config(function ($routeProvider) {
+myApp.config(["$routeProvider", function ($routeProvider) {
     $routeProvider
         .when("/", {
             templateUrl : "js/views/searchpage.html"
@@ -8,7 +8,7 @@ myApp.config(function ($routeProvider) {
         .when("/getdetails", {
             templateUrl : "js/views/listpage.html"
         })
-});
+}]);
 
 myApp.service('FlightDetailsService', function ($http, $q) {
 
