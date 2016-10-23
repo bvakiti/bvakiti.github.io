@@ -28,7 +28,6 @@ self.addEventListener('install', function(e) {
         event.respondWith(
             caches.match(event.request).then(function (response) {
                 if (event.request.url === 'http://i.ytimg.com/vi/F3I0wRGAkxo/maxresdefault.jpg') {
-                    cache.delete('http://i.ytimg.com/vi/F3I0wRGAkxo/maxresdefault.jpg');
                     return;
                 }
                 if (response) {
