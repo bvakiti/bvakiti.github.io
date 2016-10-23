@@ -31,7 +31,7 @@ myApp.service('FlightDetailsService', function ($http, $q) {
 /***  Service Workers ***/
 
 if('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('/bvakiti.github.io/serviceworker.js')
+    navigator.serviceWorker.register('/serviceworker.js')
         .then(function() { console.log("Service Worker Registered"); }).catch(function (err) {
             console.log('err  ' + err);
         });
