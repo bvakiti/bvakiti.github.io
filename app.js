@@ -22,7 +22,7 @@ myApp.service('FlightDetailsService', function () {
 /***  Service Workers ***/
 
 if('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('/ProgressiveWebApp-Services/serviceworker.js')
+    navigator.serviceWorker.register('/bvakiti.github.io/serviceworker.js')
         .then(function() { console.log("Service Worker Registered"); }).catch(function (err) {
             console.log('err  ' + err);
         });
