@@ -19,17 +19,6 @@ myApp.directive('innerTemplate', ['FlightDetailsService', function (FlightDetail
                 console.log($is);
             },
             'post': function($is, $el, attrs) {
-                $is.onClick = function() {
-
-                    $.ajax({
-                        type : 'GET',
-                        dataType: "json",
-                        url: 'https://bandhavya.github.io/sampleFlightData.json',
-                        success: function (data) {
-                            FlightDetailsService.setData(data);
-                        }
-                    });
-                }
             }
         }
 
