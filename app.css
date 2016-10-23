@@ -4,7 +4,7 @@ html {
 }
 body {
     min-height:100%;  /* set full height*/
-    background-image: url('http://i.ytimg.com/vi/F3I0wRGAkxo/maxresdefault.jpg');
+    background-image: url('bkg.jpg');
     position: relative;
 }
 
