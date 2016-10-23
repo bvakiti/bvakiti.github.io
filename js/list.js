@@ -11,19 +11,9 @@ myApp.directive('customList', ['FlightDetailsService', function (FlightDetailsSe
        'link': {
            'pre': function($s, $el, attrs) {
                $s.flightData = [];
-               $s.flightData = FlightDetailsService.getData();
-
-               // offline data
-               if (!$s.flightData) {
-                   $.ajax({
-                       type : 'GET',
-                       dataType: "json",
-                       url: 'https://bandhavya.github.io/sampleFlightData.json',
-                       success: function (data) {
-                           $s.flightData = data;
-                       }
-                   });
-               }
+               $s.$evalAsync(function () {
+                   $s.flightData = FlightDetailsService.getData();
+               });
 
            },
            'post': function($s, $el, attrs) {

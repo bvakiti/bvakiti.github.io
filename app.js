@@ -10,13 +10,22 @@ myApp.config(function ($routeProvider) {
         })
 });
 
-myApp.service('FlightDetailsService', function () {
-        this.setData = function (details) {
-            this.data = details;
-        };
-        this.getData = function () {
-            return this.data;
-        };
+myApp.service('FlightDetailsService', function ($http, $q) {
+
+
+    this.getData = function () {
+        var deferred = $q.defer();
+
+        $http.get('https://bandhavya.github.io/sampleFlightData.json')
+            .success(function (data) {
+                console.log('succ data');
+                deferred.resolve(data);
+            }).error(function (data, status, header, config) {
+                alert('error in getting data');
+                deferred.reject();
+            });
+        return deferred.promise;
+    };
 });
 
 /***  Service Workers ***/
