@@ -48,14 +48,14 @@ function initialiseState() {
         return;
     }
 
-    if (Notification.permission !== 'granted') {
-        console.log('The user has not granted the notification permission.');
-        return;
-    } else if (Notification.permission === 'blocked') {
-        /* the user has previously denied push. Can't reprompt. */
-    } else {
-        /* show a prompt to the user */
-    }
+    //if (Notification.permission !== 'granted') {
+    //    console.log('The user has not granted the notification permission.');
+    //    return;
+    //} else if (Notification.permission === 'blocked') {
+    //    /* the user has previously denied push. Can't reprompt. */
+    //} else {
+    //    /* show a prompt to the user */
+    //}
 
     // Check if push messaging is supported
     if (!('PushManager' in window)) {
