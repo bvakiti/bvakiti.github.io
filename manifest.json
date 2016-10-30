@@ -1,0 +1,13 @@
+{
+  "short_name": "HomeApp",
+  "name": "Progressive WebApp",
+  "gcm_sender_id": "AIzaSyAfy8MLTP_rENG5DBfSEiemCKtuootUx_o",
+  "icons": [
+    {
+      "src": "launch.jpg",
+      "type": "image/jpg",
+      "sizes": "48x48"
+    }
+  ],
+  "start_url": "index.html?launcher=true"
+}
