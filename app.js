@@ -68,22 +68,24 @@ function initialiseState() {
     navigator.serviceWorker.ready.then(function(serviceWorkerRegistration) {
         return serviceWorkerRegistration.pushManager.subscribe({
             'userVisibleOnly': true
-    });
+    }).then(function(subscription) {
+            if (!subscription) {
+                // Set appropriate app states.
+                return;
+            }
+            console.log(subscription.endpoint);
+            //var fetchOptions = {
+            //    method: 'post',
+            //    headers: new Headers({
+            //        'Content-Type': 'application/json'
+            //    }),
+            //    body: JSON.stringify(subscription)
+            //};
+            //return fetch('/your-web-server/api', fetchOptions);
+        }).catch(function (err) {
+            console.log('error in subcription .. '+ err);
+        });
         //serviceWorkerRegistration.pushManager.getSubscription()
 
-    }).then(function(subscription) {
-        if (!subscription) {
-            // Set appropriate app states.
-            return;
-        }
-        console.log(subscription.endpoint);
-        //var fetchOptions = {
-        //    method: 'post',
-        //    headers: new Headers({
-        //        'Content-Type': 'application/json'
-        //    }),
-        //    body: JSON.stringify(subscription)
-        //};
-        //return fetch('/your-web-server/api', fetchOptions);
-    });
+    })
 }
