@@ -4,10 +4,11 @@
   "gcm_sender_id": "752985277485",
   "icons": [
     {
-      "src": "launch.jpg",
-      "type": "image/jpg",
-      "sizes": "48x48"
+      "src": "192icon.png",
+      "type": "image/png",
+      "sizes": "192x192"
     }
   ],
-  "start_url": "index.html?launcher=true"
+  "start_url": "index.html?launcher=true",
+  "display": "standalone"
 }

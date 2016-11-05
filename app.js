@@ -81,7 +81,7 @@ function initialiseState() {
             //    }),
             //    body: JSON.stringify(subscription)
             //};
-            //return fetch('/your-web-server/api', fetchOptions);
+            //return fetch('https://android.googleapis.com/gcm/send', fetchOptions);
         }).catch(function (err) {
             console.log('error in subcription .. '+ err);
         });

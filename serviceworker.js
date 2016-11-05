@@ -22,7 +22,7 @@ self.addEventListener('install', function(e) {
 });
 
 //when the browser fetches a URL…
-    this.addEventListener('fetch', function (event) {
+    self.addEventListener('fetch', function (event) {
         console.log('Handling fetch event for', event.request.url);
 
         event.respondWith(
@@ -56,3 +56,27 @@ self.addEventListener('install', function(e) {
         );
 
     });
+
+console.log('Started', self);
+
+self.addEventListener('install', function(event) {
+    self.skipWaiting();
+    console.log('Installed', event);
+});
+
+self.addEventListener('activate', function(event) {
+    console.log('Activated', event);
+});
+
+self.addEventListener('push', function(event) {
+    console.log('Push message', event);
+
+    var title = 'Push message';
+    console.log('into push');
+    event.waitUntil(
+        self.registration.showNotification(title, {
+            body: 'The Message',
+            icon: 'launch.jpg',
+            tag: 'my-tag'
+        }));
+});
