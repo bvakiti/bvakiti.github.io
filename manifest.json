@@ -1,5 +1,5 @@
 {
-  "short_name": "HomeApp",
+  "short_name": "PWApp",
   "name": "Progressive WebApp",
   "gcm_sender_id": "752985277485",
   "icons": [
@@ -9,6 +9,5 @@
       "sizes": "192x192"
     }
   ],
-  "start_url": "index.html?launcher=true",
-  "display": "standalone"
+  "start_url": "index.html?launcher=true"
 }
