@@ -48,15 +48,6 @@ function initialiseState() {
         return;
     }
 
-    //if (Notification.permission !== 'granted') {
-    //    console.log('The user has not granted the notification permission.');
-    //    return;
-    //} else if (Notification.permission === 'blocked') {
-    //    /* the user has previously denied push. Can't reprompt. */
-    //} else {
-    //    /* show a prompt to the user */
-    //}
-
     // Check if push messaging is supported
     if (!('PushManager' in window)) {
         window.Demo.debug.log('Push messaging isn\'t supported.');
@@ -74,18 +65,10 @@ function initialiseState() {
                 return;
             }
             console.log(subscription.endpoint);
-            //var fetchOptions = {
-            //    method: 'post',
-            //    headers: new Headers({
-            //        'Content-Type': 'application/json'
-            //    }),
-            //    body: JSON.stringify(subscription)
-            //};
-            //return fetch('https://android.googleapis.com/gcm/send', fetchOptions);
+
         }).catch(function (err) {
             console.log('error in subcription .. '+ err);
         });
-        //serviceWorkerRegistration.pushManager.getSubscription()
 
     })
 }
