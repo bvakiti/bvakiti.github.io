@@ -76,7 +76,7 @@ self.addEventListener('push', function(event) {
     console.log('into push');
     event.waitUntil(
         self.registration.showNotification(title, {
-            body: 'The Message',
+            body: 'You received a new Message',
             icon: 'launch.jpg',
             tag: 'my-tag'
         }));
