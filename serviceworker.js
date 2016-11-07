@@ -8,18 +8,18 @@
 // During the installation phase, you'll usually want to cache static assets.
 self.addEventListener('install', function(e) {
     // Once the service worker is installed, go ahead and fetch the resources to make this work offline.
-    e.waitUntil(
-        caches.open(cacheName).then(function(cache) {
-            return cache.addAll([
-                '/bvakiti.github.io/',
-                '/bvakiti.github.io/index.html',
-                '/bvakiti.github.io/app.js',
-                '/bvakiti.github.io/bkg.jpg'
-            ]).then(function() {
-                self.skipWaiting();
-            });
-        })
-    );
+    //e.waitUntil(
+    //    caches.open(cacheName).then(function(cache) {
+    //        return cache.addAll([
+    //            '/bvakiti.github.io/',
+    //            '/bvakiti.github.io/index.html',
+    //            '/bvakiti.github.io/app.js',
+    //            '/bvakiti.github.io/bkg.jpg'
+    //        ]).then(function() {
+    //            self.skipWaiting();
+    //        });
+    //    })
+    //);
 });
 
 //when the browser fetches a URL…
