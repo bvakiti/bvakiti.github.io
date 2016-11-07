@@ -7,6 +7,6 @@
       "src": "192icon.png",
       "type": "image/png",
       "sizes": "192x192"
-    }
-  ]
+    }],
+  "background_color": "#FF5733"
 }
